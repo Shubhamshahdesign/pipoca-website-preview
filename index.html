@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pipoca Vegan — Crêperie & Zero-Waste Shop, Brixton</title>
+<meta name="description" content="100% vegan crêperie, Brazilian kitchen and zero-waste shop at 224 Brixton Road, London SW9. Crêpes, galettes, brunch, organic coffee and refills. Private hire for up to 40 seated.">
+<link rel="icon" type="image/png" href="/pipoca-vegan/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Pipoca Vegan",
+  "servesCuisine": ["Vegan", "French", "Brazilian"],
+  "address": {"@type": "PostalAddress", "streetAddress": "224 Brixton Road", "addressLocality": "London", "postalCode": "SW9 6AH", "addressCountry": "GB"},
+  "telephone": "+44 20 7501 8539",
+  "email": "pipocavegan@gmail.com",
+  "sameAs": ["https://www.instagram.com/pipocavegan/"],
+  "openingHours": ["Tu-Sa 10:00-18:00", "Su 10:00-17:00"],
+  "priceRange": "££"
+}
+</script>
+<style>
+:root{
+  --paper:#f6f1e7;
+  --paper-2:#efe7d8;
+  --ink:#1f2420;
+  --ink-soft:#4a514b;
+  --line:#d9cfbd;
+  --green:#24402f;
+  --green-2:#2f5540;
+  --clay:#b5532f;
+  --clay-soft:#e9c9b4;
+  --gold:#c99a3b;
+  --white:#fffdf8;
+  --radius:4px;
+  --wrap:1180px;
+  --serif:"Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans:"Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.04;margin:0;letter-spacing:-.035em}
+h1{font-size:clamp(42px,6.2vw,80px)}
+h2{font-size:clamp(32px,4vw,52px)}
+h3{font-size:24px;letter-spacing:-.02em}
+p{margin:0 0 1em}
+.eyebrow{font:600 12px/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--clay)}
+.muted{color:var(--ink-soft)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:var(--radius);font:600 15px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-primary{background:var(--green);color:var(--white)}
+.btn-primary:hover{background:var(--green-2)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-light{background:var(--paper);color:var(--green)}
+.btn-light:hover{background:var(--white)}
+
+/* preview bar */
+.preview{background:var(--ink);color:#cfd3cc;font-size:13px;text-align:center;padding:8px 16px}
+.preview strong{color:#fff;font-weight:600}
+
+/* header */
+header.site{position:sticky;top:0;z-index:40;background:rgba(246,241,231,.94);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.site.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{height:30px;width:auto;display:block}
+.logo b{font:700 28px/1 var(--serif);letter-spacing:-.04em;color:var(--green)}
+.logo span{font:600 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:15px;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--clay);transition:right .25s}
+.nav ul a:hover::after{right:0}
+.nav-right{display:flex;align-items:center;gap:18px}
+.status{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-soft);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:#9a9a9a}
+.dot.open{background:#3d8b57;box-shadow:0 0 0 4px rgba(61,139,87,.15)}
+.dot.closed{background:var(--clay)}
+.menu-toggle{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:transform .25s,opacity .25s}
+
+/* hero */
+.hero{padding:56px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p.lead{font-size:20px;max-width:30em;color:var(--ink-soft);margin:26px 0 34px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-top:1px solid var(--line)}
+.facts div{padding:18px 16px 0 0}
+.facts dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.facts dd{margin:0;font-weight:600}
+.hero-media{position:relative}
+.hero-media .photo{aspect-ratio:1/1}
+.hero-media .photo img{object-position:62% 50%}
+.hero-badge{position:absolute;left:-28px;bottom:-28px;background:var(--white);padding:18px 22px;border-radius:var(--radius);box-shadow:0 18px 40px -18px rgba(31,36,32,.35);max-width:230px}
+.hero-badge b{display:block;font:600 24px/1.1 var(--serif);letter-spacing:-.02em;color:var(--green)}
+.hero-badge small{display:block;margin-top:6px;font-size:13px;line-height:1.45;color:var(--ink-soft)}
+
+/* photo frames with graceful fallback */
+.photo{position:relative;overflow:hidden;border-radius:var(--radius);background:
+  radial-gradient(circle at 30% 25%,rgba(201,154,59,.35),transparent 55%),
+  radial-gradient(circle at 75% 80%,rgba(181,83,47,.30),transparent 50%),
+  var(--green)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.missing img{display:none}
+.photo .ph-label{display:none}
+.photo.missing .ph-label{display:flex;position:absolute;inset:0;align-items:flex-end;padding:18px;color:rgba(255,253,248,.8);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+
+/* festive strip */
+.festive{background:var(--green);color:var(--paper)}
+.festive .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+.festive p{margin:0;font-size:18px}
+.festive p em{font:italic 600 20px/1 var(--serif);color:var(--clay-soft);margin-right:10px}
+
+/* sections */
+section{padding:110px 0}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px}
+.section-head p{font-size:18px;color:var(--ink-soft);margin:0}
+
+/* about pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.pillar{padding:32px 32px 8px 0}
+.pillar + .pillar{padding-left:32px;border-left:1px solid var(--line)}
+.pillar .num{font:600 14px/1 var(--sans);letter-spacing:.08em;color:var(--clay);display:block;margin-bottom:18px}
+.pillar h3{margin-bottom:12px}
+
+/* menu */
+.menu-sec{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:8px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;padding:14px 18px;font:600 15px var(--sans);color:var(--ink-soft);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--clay)}
+.panel{display:none}
+.panel.active{display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.dish{padding:26px 0;border-bottom:1px dashed var(--line)}
+.dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.dish h4{margin:0;font:600 20px/1.25 var(--serif);letter-spacing:-.02em}
+.tag{font:600 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);border-radius:20px;padding:5px 9px;white-space:nowrap}
+.dish p{margin:8px 0 0;color:var(--ink-soft);font-size:16px}
+.menu-note{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:40px;flex-wrap:wrap}
+.menu-note p{margin:0;color:var(--ink-soft);font-size:15px;max-width:40em}
+
+/* shop */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split .photo{aspect-ratio:5/6}
+.list{list-style:none;padding:0;margin:28px 0 36px;border-top:1px solid var(--line)}
+.list li{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list li span{font:600 14px/1.9 var(--sans);color:var(--clay);min-width:28px}
+
+/* gallery strip */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:14px;margin-top:80px}
+.gallery .photo:first-child{grid-row:span 2}
+
+/* hire */
+.hire{background:var(--green);color:var(--paper)}
+.hire .eyebrow{color:var(--clay-soft)}
+.hire .muted{color:#c3cdc5}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);margin:48px 0 0;border-top:1px solid rgba(246,241,231,.25)}
+.specs div{padding:24px 20px 0 0}
+.specs b{display:block;font:600 46px/1 var(--serif);letter-spacing:-.04em}
+.specs small{color:#c3cdc5;font-size:14px}
+.hire-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+form.enquiry{background:var(--paper);color:var(--ink);padding:36px;border-radius:var(--radius)}
+form.enquiry h3{margin-bottom:6px}
+.field{display:flex;flex-direction:column;gap:6px;margin-top:18px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:13px;font-weight:600;letter-spacing:.04em}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);background:var(--white);border-radius:var(--radius);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:1px;border-color:var(--green)}
+textarea{min-height:96px;resize:vertical}
+form .btn{margin-top:22px;width:100%;justify-content:center}
+.form-note{font-size:13px;color:var(--ink-soft);margin:12px 0 0}
+.uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.uses span{border:1px solid rgba(246,241,231,.35);padding:8px 14px;border-radius:30px;font-size:14px}
+
+/* press */
+.press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.press-item{padding:36px 36px 0 0}
+.press-item + .press-item{padding-left:36px;border-left:1px solid var(--line)}
+.score{font:600 60px/1 var(--serif);letter-spacing:-.04em;color:var(--green)}
+.score sup{font-size:26px;color:var(--ink-soft)}
+.press-item h4{margin:14px 0 8px;font:600 14px var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.themes{margin-top:72px;display:grid;grid-template-columns:1fr 2fr;gap:56px}
+.theme-list{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.theme-list p{padding:18px 0;border-bottom:1px solid var(--line);margin:0}
+.theme-list b{display:block;font:600 18px/1.3 var(--serif);margin-bottom:4px;letter-spacing:-.01em}
+
+/* visit */
+.visit{background:var(--paper-2)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:48px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right}
+.hours tr.today td{font-weight:700;color:var(--green)}
+.hours tr.today td:first-child::after{content:" · today";font-weight:500;color:var(--clay);font-size:13px}
+.contact p{margin:0 0 18px}
+.contact a{text-decoration-color:var(--clay);text-underline-offset:4px}
+.contact small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px}
+.map{border-radius:var(--radius);overflow:hidden;min-height:340px;background:var(--line)}
+.map{position:relative}
+.map iframe{position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;filter:grayscale(.3) contrast(1.05)}
+.map-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;text-decoration:none;color:var(--paper);background:radial-gradient(circle at 70% 30%,rgba(201,154,59,.35),transparent 55%),var(--green)}
+
+/* footer */
+footer{background:var(--ink);color:#b9bfb7;padding:64px 0 40px;font-size:15px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer .logo b{color:var(--paper)}
+footer a{color:#e7e2d6;text-decoration:none}
+footer a:hover{color:#fff}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:8px}
+.foot-base{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #343a35;margin-top:48px;padding-top:24px;font-size:13px;flex-wrap:wrap}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:980px){
+  .nav ul{position:fixed;inset:76px 0 auto 0;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 24px 20px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+  .nav ul.open{transform:none;opacity:1;pointer-events:auto}
+  .nav ul li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .menu-toggle{display:block}
+  .nav-right .btn{display:none}
+  .hero-grid,.split,.hire-grid,.section-head,.themes{grid-template-columns:1fr;gap:40px}
+  .hero-media{order:-1}
+  .hero-media .photo{aspect-ratio:16/11}
+  .hero-badge{display:none}
+  .hero{padding-top:28px}
+  .panel.active{grid-template-columns:1fr}
+  .visit-grid{grid-template-columns:1fr 1fr}
+  .visit-grid .map{grid-column:span 2}
+  .specs{grid-template-columns:repeat(2,1fr)}
+  .press-grid{grid-template-columns:1fr}
+  .press-item + .press-item{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:28px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:76px 0}
+  .status{display:none}
+  .logo img{height:24px}
+  .logo span{display:none}
+  .facts{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .pillar + .pillar{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 160px 160px}
+  .gallery .photo:first-child{grid-column:span 2;grid-row:auto}
+  .visit-grid{grid-template-columns:1fr}
+  .visit-grid .map{grid-column:auto}
+  .theme-list{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  form.enquiry{padding:24px}
+  .foot{grid-template-columns:1fr}
+  .specs b{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<div class="preview" id="preview-bar"><strong>Design preview</strong> prepared for Pipoca Vegan by The Saturn Studio. Not the official website.</div>
+
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Pipoca Vegan home"><img src="/pipoca-vegan/images/logo-green.png" alt="Pipoca" width="423" height="97"><span>Vegan · Brixton</span></a>
+    <ul id="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#shop">The Shop</a></li>
+      <li><a href="#hire">Private hire</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="status" aria-live="polite"><i class="dot" id="status-dot"></i><span id="status-text">Checking hours</span></div>
+      <a class="btn btn-primary" href="tel:+442075018539">Call 020 7501 8539</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:80px">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Vegan crêperie &amp; zero-waste shop · Brixton Road</p>
+        <h1 style="margin-top:20px">Crêpes, galettes and <em>Brazilian</em> home cooking.</h1>
+        <p class="lead">Everything on the menu is plant-based, from Sunday brunch to the coffee. Eat in under the hanging flowers, then fill your jars in the shop next door.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#menu">See the menu</a>
+          <a class="btn btn-ghost" href="#visit">Plan your visit</a>
+        </div>
+        <dl class="facts">
+          <div><dt>Today</dt><dd id="today-hours">10:00 – 18:00</dd></div>
+          <div><dt>Diets</dt><dd>100% vegan, GF options</dd></div>
+          <div><dt>Find us</dt><dd>224 Brixton Road</dd></div>
+        </dl>
+      </div>
+      <div class="hero-media">
+        <div class="photo"><img src="/pipoca-vegan/images/hero.jpg" alt="Pipoca Vegan shopfront on Brixton Road with outdoor tables" fetchpriority="high"><span class="ph-label">Pipoca shopfront</span></div>
+        <div class="hero-badge"><b>Since 2018</b><small>Serving Brixton from the same corner of Brixton Road.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FESTIVE -->
+  <div class="festive">
+    <div class="wrap">
+      <p><em>Christmas at Pipoca.</em>Book the café for your team or family gathering, up to 40 seated.</p>
+      <a class="btn btn-light" href="#hire">Enquire about dates</a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">One address, three things</p>
+          <h2 style="margin-top:16px">A kitchen, a shop and a room worth booking.</h2>
+        </div>
+        <p>Pipoca is run by a small Brazilian team on Brixton Road. The cooking pulls from France, Brazil and the Caribbean, and none of it uses animal products. Vegans come for the range. Everyone else comes back for the feijoada.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal"><span class="num">01</span><h3>The kitchen</h3><p class="muted">Savoury and sweet crêpes, buckwheat galettes, all-day brunch plates and Brazilian bowls, cooked to order.</p></div>
+        <div class="pillar reveal"><span class="num">02</span><h3>The shop</h3><p class="muted">A refill store for organic dry goods, cleaning and body products, with nut butter ground in front of you.</p></div>
+        <div class="pillar reveal"><span class="num">03</span><h3>The space</h3><p class="muted">A calm room under a ceiling of dried flowers, available for supper clubs, workshops and private dinners.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-sec" id="menu">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Menu</p>
+          <h2 style="margin-top:16px">What to order.</h2>
+        </div>
+        <p>A selection of the dishes regulars ask for. The full menu, daily specials and prices are in the café.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Menu categories">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p-savoury" id="t-savoury">Savoury crêpes &amp; galettes</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-brunch" id="t-brunch" tabindex="-1">Brunch &amp; bowls</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-sweet" id="t-sweet" tabindex="-1">Sweet</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-drinks" id="t-drinks" tabindex="-1">Drinks</button>
+      </div>
+
+      <div class="panel active" role="tabpanel" id="p-savoury" aria-labelledby="t-savoury">
+        <div class="dish"><div class="dish-top"><h4>The Jamming</h4><span class="tag">House favourite</span></div><p>Galette filled with jackfruit, black beans and sweet plantain.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Gonzola</h4></div><p>Vegan blue cheese, sun-dried tomato, walnuts, spinach and caramelised onion.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Portobello</h4></div><p>Portobello mushrooms, tomato chutney, garlic, herbs, pesto and vegan cheddar.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Chorizo &amp; greens</h4></div><p>A generous galette of seasonal vegetables with plant-based chorizo.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-brunch" aria-labelledby="t-brunch" hidden>
+        <div class="dish"><div class="dish-top"><h4>Brixton Brunch</h4><span class="tag">Weekends</span></div><p>The full plate. Our take on a cooked breakfast, all plant-based.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Mexican Brunch</h4></div><p>Built around a slow-cooked, well-spiced bean stew.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Feijoada bowl</h4><span class="tag">Brazilian</span></div><p>Brazil's black bean stew, made the way it is at home.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Moqueca bowl</h4></div><p>Coconut and tomato stew in the Bahian style.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Banana blossom "fish" curry</h4></div><p>Banana blossom in a fragrant curry sauce.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Croquetes &amp; cassava chips</h4></div><p>Two sides worth ordering for the table.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-sweet" aria-labelledby="t-sweet" hidden>
+        <div class="dish"><div class="dish-top"><h4>Hazelnut crêpe</h4><span class="tag">Most ordered</span></div><p>Hazelnut spread with strawberries and vanilla ice cream.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Peanut butter, chocolate &amp; banana</h4></div><p>A sweet galette for anyone who can't choose.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Banana bread</h4></div><p>Baked in-house, good with a flat white.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Cakes of the day</h4></div><p>Ask at the counter for what's on today.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p-drinks" aria-labelledby="t-drinks" hidden>
+        <div class="dish"><div class="dish-top"><h4>Moon milk</h4><span class="tag">Warming</span></div><p>Spiced plant milk, ideal for a cold afternoon.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Carrot &amp; ginger juice</h4></div><p>Pressed fresh.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Coffee, hot or iced</h4></div><p>Strong espresso with your choice of plant milk.</p></div>
+        <div class="dish"><div class="dish-top"><h4>Smoothies &amp; organic teas</h4></div><p>A long list. Ask the team for the seasonal blend.</p></div>
+      </div>
+
+      <div class="menu-note">
+        <p>Gluten-free, soya-free and nut-free options are available. Please tell the team about any allergies when you order.</p>
+        <a class="btn btn-ghost" href="tel:+442075018539">Ask about today's specials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop">
+    <div class="wrap">
+      <div class="split">
+        <div class="photo reveal"><img src="/pipoca-vegan/images/shop.jpg" alt="Wall of refill dispensers with grains, nuts and pasta in the Pipoca shop" loading="lazy" style="object-position:58% 45%"><span class="ph-label">Photo · refill shop</span></div>
+        <div class="reveal">
+          <p class="eyebrow">The zero-waste shop</p>
+          <h2 style="margin-top:16px">Bring your jars. Take home less plastic.</h2>
+          <p class="muted" style="margin-top:22px;font-size:18px">Next to the café is a full refill store, so the weekly shop and Sunday brunch can happen in one trip.</p>
+          <ul class="list">
+            <li><span>01</span><div><b>Organic dry goods</b><br><span class="muted" style="font:inherit;color:var(--ink-soft)">Grains, pulses, nuts, seeds and dried fruit by weight.</span></div></li>
+            <li><span>02</span><div><b>Fresh nut butter</b><br><span class="muted" style="font:inherit;color:var(--ink-soft)">Ground on the machine while you wait.</span></div></li>
+            <li><span>03</span><div><b>Home &amp; body refills</b><br><span class="muted" style="font:inherit;color:var(--ink-soft)">Cleaning liquids, soaps and toiletries.</span></div></li>
+            <li><span>04</span><div><b>Plants &amp; small gifts</b><br><span class="muted" style="font:inherit;color:var(--ink-soft)">Houseplants, herbs and wooden cards. Useful in December.</span></div></li>
+          </ul>
+          <a class="btn btn-primary" href="#visit">Shop opening hours</a>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="photo reveal"><img src="/pipoca-vegan/images/interior.jpg" alt="Inside Pipoca: red chairs, marble tables and dried flowers hanging from the ceiling" loading="lazy" style="object-position:50% 40%"><span class="ph-label">Photo · interior</span></div>
+        <div class="photo reveal"><img src="/pipoca-vegan/images/griddle.jpg" alt="A galette being topped on the griddle with mushrooms, sun-dried tomato and pesto" loading="lazy" style="object-position:50% 55%"><span class="ph-label">Photo · on the griddle</span></div>
+        <div class="photo reveal"><img src="/pipoca-vegan/images/galette.jpg" alt="Buckwheat galette filled with vegan chorizo and roasted vegetables, with salad" loading="lazy" style="object-position:50% 55%"><span class="ph-label">Photo · galette</span></div>
+        <div class="photo reveal"><img src="/pipoca-vegan/images/sweet-crepes.jpg" alt="Sweet crêpes with banana, chocolate and pecans, and cassava chips" loading="lazy" style="object-position:50% 60%"><span class="ph-label">Photo · sweet crêpes</span></div>
+        <div class="photo reveal"><img src="/pipoca-vegan/images/smoothies.jpg" alt="A carrot juice and a berry smoothie on a wooden table" loading="lazy" style="object-position:50% 55%"><span class="ph-label">Photo · smoothies</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE HIRE -->
+  <section class="hire" id="hire">
+    <div class="wrap">
+      <div class="hire-grid">
+        <div class="reveal">
+          <p class="eyebrow">Private hire &amp; Christmas bookings</p>
+          <h2 style="margin-top:16px">Have the whole room to yourselves.</h2>
+          <p class="muted" style="margin-top:22px;font-size:18px">The café closes to the public for private events, with a fully equipped kitchen and our team cooking. It suits a work Christmas lunch as well as it does a supper club or a quiet family dinner.</p>
+          <div class="uses">
+            <span>Christmas parties</span><span>Supper clubs</span><span>Pop-up kitchens</span><span>Wellness workshops</span><span>Birthdays</span><span>Photo shoots</span>
+          </div>
+          <div class="specs">
+            <div><b>40</b><small>guests seated</small></div>
+            <div><b>55</b><small>guests standing</small></div>
+            <div><b>90m²</b><small>of floor space</small></div>
+            <div><b>11pm</b><small>licensed until</small></div>
+          </div>
+        </div>
+
+        <form class="enquiry reveal" id="enquiry" novalidate>
+          <h3>Send an enquiry</h3>
+          <p class="muted" style="margin:0;font-size:15px">Tell us roughly what you have in mind and we'll reply with availability.</p>
+          <div class="row2">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date"></div>
+            <div class="field"><label for="f-guests">Guests</label><select id="f-guests" name="guests"><option>Under 15</option><option>15 – 25</option><option>25 – 40</option><option>40 – 55 (standing)</option></select></div>
+          </div>
+          <div class="field"><label for="f-type">Occasion</label><select id="f-type" name="type"><option>Christmas party</option><option>Private dinner</option><option>Supper club / pop-up</option><option>Workshop</option><option>Birthday</option><option>Something else</option></select></div>
+          <div class="field"><label for="f-msg">Anything else</label><textarea id="f-msg" name="message" placeholder="Timings, budget per head, dietary needs…"></textarea></div>
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <p class="form-note" id="form-note">This opens your email app with the details filled in, addressed to pipocavegan@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">What people say</p>
+          <h2 style="margin-top:16px">Well liked in Brixton and beyond.</h2>
+        </div>
+        <p>Ratings and recognition from independent guides and guest reviews.</p>
+      </div>
+      <div class="press-grid">
+        <div class="press-item reveal"><div class="score">7.8<sup>/10</sup></div><h4>The Infatuation</h4><p class="muted">Rated "good" and included in their guide to the best vegan restaurants in London.</p></div>
+        <div class="press-item reveal"><div class="score">4.6<sup>/5</sup></div><h4>Google &amp; Facebook</h4><p class="muted">Average across nearly 600 guest reviews.</p></div>
+        <div class="press-item reveal"><div class="score">4.3<sup>/5</sup></div><h4>Tripadvisor</h4><p class="muted">Average from guest reviews on Tripadvisor.</p></div>
+      </div>
+
+      <div class="themes">
+        <div class="reveal">
+          <p class="eyebrow">Mentioned most often</p>
+          <h3 style="margin-top:14px;font-size:34px">The things guests keep coming back for.</h3>
+        </div>
+        <div class="theme-list reveal">
+          <p><b>The galettes</b><span class="muted">The Jamming and the Gonzola come up again and again.</span></p>
+          <p><b>The hazelnut crêpe</b><span class="muted">Usually with strawberries and vanilla ice cream.</span></p>
+          <p><b>Allergy-friendly</b><span class="muted">Plenty of gluten, soya and nut-free choice.</span></p>
+          <p><b>The shop</b><span class="muted">Locals use it as their regular grocery stop.</span></p>
+          <p><b>Weekend brunch</b><span class="muted">Brixton Brunch and the Mexican plate.</span></p>
+          <p><b>The dog by the till</b><span class="muted">A regular guest favourite.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Visit</p>
+          <h2 style="margin-top:16px">A short walk from Brixton station.</h2>
+        </div>
+        <p>Walk-ins welcome. For groups of six or more, a quick call ahead helps us set a table.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="reveal">
+          <h3 style="font-size:26px;margin-bottom:12px">Opening hours</h3>
+          <table class="hours" id="hours-table">
+            <tbody>
+              <tr data-day="2"><td>Tuesday</td><td>10:00 – 18:00</td></tr>
+              <tr data-day="3"><td>Wednesday</td><td>10:00 – 18:00</td></tr>
+              <tr data-day="4"><td>Thursday</td><td>10:00 – 18:00</td></tr>
+              <tr data-day="5"><td>Friday</td><td>10:00 – 18:00</td></tr>
+              <tr data-day="6"><td>Saturday</td><td>10:00 – 18:00</td></tr>
+              <tr data-day="0"><td>Sunday</td><td>10:00 – 17:00</td></tr>
+              <tr data-day="1"><td>Monday</td><td>Closed</td></tr>
+            </tbody>
+          </table>
+          <p class="muted" style="font-size:14px;margin-top:14px">Festive opening hours will be posted here in December.</p>
+        </div>
+        <div class="contact reveal">
+          <h3 style="font-size:26px;margin-bottom:18px">Find &amp; contact</h3>
+          <p><small>Address</small>224 Brixton Road<br>London SW9 6AH</p>
+          <p><small>Phone</small><a href="tel:+442075018539">020 7501 8539</a></p>
+          <p><small>Email</small><a href="mailto:pipocavegan@gmail.com">pipocavegan@gmail.com</a></p>
+          <p><small>Instagram</small><a href="https://www.instagram.com/pipocavegan/" target="_blank" rel="noopener">@pipocavegan</a></p>
+          <p><small>Delivery</small>Available through Just Eat</p>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=224+Brixton+Road+London+SW9+6AH">Get directions</a>
+        </div>
+        <div class="map reveal" id="map">
+          <a class="map-fallback" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pipoca+Vegan+224+Brixton+Road+London+SW9+6AH">
+            <span class="eyebrow" style="color:var(--clay-soft)">Brixton, SW9</span>
+            <span style="font:600 28px/1.1 var(--serif);letter-spacing:-.03em;margin-top:10px">224 Brixton Road</span>
+            <span style="margin-top:12px;font-weight:600">Open in Google Maps →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" aria-label="Pipoca Vegan home"><img src="/pipoca-vegan/images/logo-paper.png" alt="Pipoca" width="423" height="97" style="height:34px"></a>
+        <p style="margin-top:14px;max-width:26em">Vegan crêperie, Brazilian kitchen and zero-waste shop. 224 Brixton Road, London SW9 6AH.</p>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#shop">The Shop</a></li>
+          <li><a href="#hire">Private hire</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><a href="tel:+442075018539">020 7501 8539</a></li>
+          <li><a href="mailto:pipocavegan@gmail.com">pipocavegan@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/pipocavegan/" target="_blank" rel="noopener">Instagram @pipocavegan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© <span id="year">2026</span> Pipoca Vegan</span>
+      <span>Site by The Saturn Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Photo fallback: show a styled frame when an image isn't supplied yet
+  document.querySelectorAll('.photo img').forEach(function(img){
+    function miss(){ img.closest('.photo').classList.add('missing'); }
+    if (img.complete && img.naturalWidth === 0) miss();
+    img.addEventListener('error', miss);
+  });
+
+  // Mobile nav
+  var toggle = document.getElementById('menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  // Header border on scroll
+  var header = document.querySelector('header.site');
+  window.addEventListener('scroll', function(){ header.classList.toggle('scrolled', window.scrollY > 10); }, {passive:true});
+
+  // Opening hours in London time
+  var HOURS = {0:[10,17],1:null,2:[10,18],3:[10,18],4:[10,18],5:[10,18],6:[10,18]};
+  var NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  function londonNow(){
+    var parts = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+    var map = {}; parts.forEach(function(p){ map[p.type] = p.value; });
+    var day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(map.weekday);
+    return {day:day, mins: (parseInt(map.hour,10)%24)*60 + parseInt(map.minute,10)};
+  }
+  function fmt(h){ return (h<10?'0':'')+h+':00'; }
+  function updateStatus(){
+    var now = londonNow(), today = HOURS[now.day];
+    var dot = document.getElementById('status-dot'), txt = document.getElementById('status-text');
+    document.getElementById('today-hours').textContent = today ? fmt(today[0])+' – '+fmt(today[1]) : 'Closed today';
+    var row = document.querySelector('#hours-table tr[data-day="'+now.day+'"]');
+    document.querySelectorAll('#hours-table tr').forEach(function(r){ r.classList.remove('today'); });
+    if (row) row.classList.add('today');
+    if (today && now.mins >= today[0]*60 && now.mins < today[1]*60){
+      dot.className = 'dot open'; txt.textContent = 'Open now · until ' + fmt(today[1]);
+      return;
+    }
+    dot.className = 'dot closed';
+    for (var i = 0; i < 7; i++){
+      var d = (now.day + i) % 7, h = HOURS[d];
+      if (!h) continue;
+      if (i === 0 && now.mins < h[0]*60){ txt.textContent = 'Closed · opens ' + fmt(h[0]); return; }
+      if (i > 0){ txt.textContent = 'Closed · opens ' + (i === 1 ? 'tomorrow' : NAMES[d]) + ' ' + fmt(h[0]); return; }
+    }
+  }
+  updateStatus(); setInterval(updateStatus, 60000);
+
+  // Menu tabs (keyboard accessible)
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      var p = document.getElementById(t.getAttribute('aria-controls'));
+      p.hidden = !on; p.classList.toggle('active', on);
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        select(n); n.focus(); e.preventDefault();
+      }
+    });
+  });
+
+  // Enquiry form -> mailto
+  var form = document.getElementById('enquiry');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements, note = document.getElementById('form-note');
+    if (!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)){
+      note.textContent = 'Please add your name and a valid email address.'; note.style.color = 'var(--clay)'; return;
+    }
+    var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\nDate: ' + (f.date.value || 'Flexible') +
+      '\nGuests: ' + f.guests.value + '\nOccasion: ' + f.type.value + '\n\n' + f.message.value;
+    window.location.href = 'mailto:pipocavegan@gmail.com?subject=' + encodeURIComponent('Private hire enquiry: ' + f.type.value) + '&body=' + encodeURIComponent(body);
+    note.style.color = ''; note.textContent = 'Thanks. Your email app should open now with everything filled in.';
+  });
+
+  // Reveal on scroll
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Live map: embed on normal hosting; keep the static card when the page is framed (e.g. previews)
+  (function(){
+    var framed = false; try { framed = window.self !== window.top; } catch(e){ framed = true; }
+    if (framed) return;
+    var box = document.getElementById('map'), f = document.createElement('iframe');
+    f.title = 'Map showing Pipoca Vegan, 224 Brixton Road'; f.loading = 'lazy';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.src = 'https://www.google.com/maps?q=Pipoca+Vegan,+224+Brixton+Road,+London+SW9+6AH&z=16&output=embed';
+    box.insertBefore(f, box.firstChild); box.classList.add('has-embed');
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
